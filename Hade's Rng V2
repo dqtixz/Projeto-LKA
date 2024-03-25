@@ -1,162 +1,20 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/memejames/Nothing-project1/main/Suku')))()
-
-local Window = OrionLib:MakeWindow({Name = "Hades RNG│Projeto LKA", HidePremium = true, SaveConfig = false, ConfigFolder = "Projeto LKA", IntroText = "Projeto LKA", IntroIcon = "rbxassetid://15797726334", IntroEnabled = true, Icon = "rbxassetid://15797726334"})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Projeto LKA", HidePremium = false, IntroText = "Projeto LKA", SaveConfig = true, ConfigFolder = "Projeto LKA"})
 
 local Tab = Window:MakeTab({
-	Name = "Main ",
-	Icon = "rbxassetid://15696178563",
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab:AddLabel("get auto click")
-Tab:AddLabel("to auto collect")
-Tab:AddLabel("Need Pray or Gwa Gwa Spawn In Workspace")
-Tab:AddLabel("To The Tp Work")
-Tab:AddLabel("Credits Auto Roll:F_hub99")
-Tab:AddLabel("Update 23/03/2024")
+Tab:AddLabel("Status: Patched")
+Tab:AddLabel("New Version V4")
 
 Tab:AddButton({
-	Name = "Auto Roll",
+	Name = "Load New Version",
 	Callback = function()
- local args = {
-    [1] = "AutoRoll",
-    [2] = true
-}
-
-game:GetService("ReplicatedStorage").Network.Rolling:InvokeServer(unpack(args))
-wait(1)
-OrionLib:MakeNotification({
-	Name = "Rejoin...",
-	Content = "Please Wait To Work !",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-wait(2)
-OrionLib:MakeNotification({
-	Name = "Teleport...",
-	Content = "Please Wait...",
-	Image = "rbxassetid://4483345998",
-	Time = 3
-})
-wait(3)
- local ts = game:GetService("TeleportService")
-local p = game:GetService("Players").LocalPlayer
-ts:Teleport(game.PlaceId, p)
-  end    
-})
-
-Tab:AddButton({
-	Name = "Turn Off Auto Roll",
-	Callback = function()
-  local args = {
-    [1] = "AutoRoll",
-    [2] = false
-}
-
-game:GetService("ReplicatedStorage").Network.Rolling:InvokeServer(unpack(args))
-wait(2)
-OrionLib:MakeNotification({
-	Name = "Rejoin...",
-	Content = "Please Wait !",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
-wait(2)
- local ts = game:GetService("TeleportService")
-local p = game:GetService("Players").LocalPlayer
-ts:Teleport(game.PlaceId, p)
-end
-})
-
-Tab:AddButton({
-	Name = "Pray TP",
-	Callback = function()
-	  local player = game.Players.LocalPlayer
-		local workspace = game:GetService("Workspace")
-
-		local foundPray = false
-
-		for _, v in pairs(workspace:GetChildren()) do
-			if v.Name == "Pray" then
-				foundPray = true
-				player.Character.HumanoidRootPart.CFrame = v.CFrame
-				break
-			end
-		end
-
-		if not foundPray then
-			OrionLib:MakeNotification({
-				Name = "Pray Fruit not found",
-				Content = "Please Wait Spawn",
-				Image = "rbxassetid://4483345998",
-				Time = 5
-			})
-		end
-	end
-})
-      		--[[local player = game.Players.LocalPlayer local workspace = game:GetService("Workspace")
-
-for _,v in pairs(workspace:GetChildren()) do if v.Name == "Pray" then player.Character.HumanoidRootPart.CFrame = v.CFrame end end]]
-
-Tab:AddButton({
-	Name = "GwaGwa TP",
-	Callback = function()
-	    local player = game.Players.LocalPlayer
-		local workspace = game:GetService("Workspace")
-
-		local foundGwaGwa = false
-
-		for _, v in pairs(workspace:GetChildren()) do
-			if v.Name == "GwaGwa" then
-				foundGwaGwa = true
-				player.Character.HumanoidRootPart.CFrame = v.CFrame
-				break
-			end
-		end
-
-		if not foundGwaGwa then
-			OrionLib:MakeNotification({
-				Name = "GwaGwa Fruit not found",
-				Content = "Please Wait Spawn",
-				Image = "rbxassetid://4483345998",
-				Time = 5
-			})
-		end
-	end
-})
-      	--[[	local player = game.Players.LocalPlayer local workspace = game:GetService("Workspace")
-
-for _,v in pairs(workspace:GetChildren()) do if v.Name == "GwaGwa" then player.Character.HumanoidRootPart.CFrame = v.CFrame end end]]
-  --	end    
---})
-
-Tab:AddButton({
-	Name = "Loop Tp Pray",
-	Callback = function()
-	  while true do
-	  local player = game.Players.LocalPlayer local workspace = game:GetService("Workspace")
-
-for _,v in pairs(workspace:GetChildren()) do if v.Name == "Pray" then player.Character.HumanoidRootPart.CFrame = v.CFrame end end
-  	wait(0.1) end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Loop GwaGwa TP",
-	Callback = function()
-	  while true do
-      		local player = game.Players.LocalPlayer local workspace = game:GetService("Workspace")
-
-for _,v in pairs(workspace:GetChildren()) do if v.Name == "GwaGwa" then player.Character.HumanoidRootPart.CFrame = v.CFrame end end
-  	wait(0.1) end
-  	end    
-})
-
-Tab:AddButton({
-	Name = "WalkSpeed Gui (Not Fly)",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
-	end    
+      	loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/Hades-Rng-Projeto-lka/main/Script"))();
+      	 	end    
 })
 
 OrionLib:Init()
